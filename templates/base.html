@@ -1,0 +1,55 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    {% block links %}{% endblock %}
+    <script src="https://kit.fontawesome.com/6ff0500452.js" crossorigin="anonymous"></script>
+
+    <script src=
+    "https://code.jquery.com/jquery-git.js">
+        </script>
+    <script src="{% static 'js/nav.js' %}"></script>
+    <title>home</title>
+
+</head>
+<body>
+    <nav class="navbar  navbar-expand-md navbar-light">
+        <i class="fa fa-calculator fa-2x p-2 fa-white fa-brown" aria-hidden="true"></i>
+
+     <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#toggleMobileMenu"
+        aria-controls="toggleMobileMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="toggleMobileMenu">
+        <ul class="navbar-nav  ml-auto text-center">
+            <li>
+                <a href="{% url 'home'%}" class="nav-link px-3" >Home</a>
+            </li>
+            <li>
+                <a href="{% url 'calendar'%}" class="nav-link">Calendar</a>
+            </li>
+            <li>
+                <a href="{% url 'login'%}" class="nav-link px-3">Login</a>
+            </li>
+            <li>
+                <a href="{% url 'register'%}" class="nav-link px-3">Signup</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
